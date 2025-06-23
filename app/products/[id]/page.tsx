@@ -7,6 +7,9 @@ import { ShoppingCart, ArrowLeft, Heart, Share2, Store } from 'lucide-react';
 import { getProducts } from '@/lib/api';
 import { notFound } from 'next/navigation';
 
+// Edge Runtime configuration for Cloudflare Workers
+export const runtime = 'edge';
+
 interface ProductPageProps {
   params: {
     id: string;

@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next-on-pages",
+    "build": "next build",
+    "build:pages": "npx @cloudflare/next-on-pages",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "wrangler pages deploy .vercel/output/static",
-    "preview": "wrangler pages dev .vercel/output/static"
+    "deploy": "npm run build:pages && wrangler pages deploy .vercel/output/static",
+    "preview": "npm run build:pages && wrangler pages dev .vercel/output/static"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
