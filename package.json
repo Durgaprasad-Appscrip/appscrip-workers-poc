@@ -8,7 +8,9 @@
     "build:pages": "npx @cloudflare/next-on-pages",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "npm run build:pages && wrangler pages deploy .vercel/output/static",
+    "deploy": "npm run build:pages && wrangler pages deploy .vercel/output/static --project-name=nextjs-ecommerce-poc",
+    "deploy:quick": "npm run build:pages && wrangler pages deploy .vercel/output/static --project-name=nextjs-ecommerce-poc --commit-dirty=true",
+    "deploy:vercel": "vercel --prod",
     "preview": "npm run build:pages && wrangler pages dev .vercel/output/static"
   },
   "dependencies": {
